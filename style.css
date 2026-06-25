@@ -3241,3 +3241,62 @@ footer {
         padding: 0 18px;
     }
 }
+
+/* ===== Project Tab Navigation & Grid ===== */
+.project-tabs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0 40px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.project-tab-btn {
+    padding: 10px 24px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: var(--tech-stack-box-first-color);
+    border: 1px solid var(--tech-stack-box-border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-family: 'Fira Code', monospace;
+    backdrop-filter: blur(5px);
+}
+
+.project-tab-btn:hover {
+    background: var(--color-purple);
+    border-color: var(--color-purple);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(128, 0, 255, 0.2);
+}
+
+.project-tab-btn.active {
+    background: linear-gradient(135deg, var(--color-purple), var(--color-light-purple));
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(128, 0, 255, 0.4);
+}
+
+.project-list {
+    display: none;
+    width: 100%;
+}
+
+.project-list.active-tab-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+@media screen and (max-width: 991px) {
+    .project-list.active-tab-content {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
